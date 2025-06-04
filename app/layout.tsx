@@ -1,9 +1,15 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Zeina Zahoori',
+  description: 'Portfolio website showcasing my work and experience',
+  icons: {
+    icon: '/assets/zeina_logo.png',
+    shortcut: '/assets/zeina_logo.png',
+    apple: '/assets/zeina_logo.png',
+  },
   generator: 'v0.dev',
 }
 
@@ -18,6 +24,7 @@ export default function RootLayout({
         <main className="relative">
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   )

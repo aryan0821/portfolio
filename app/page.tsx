@@ -49,19 +49,22 @@ export default function Page() {
       </header>
 
       {/* Hero Section with Spline */}
-      <div className="w-full h-screen relative overflow-hidden">
-        <div className="absolute inset-0 top-[80px] md:top-[100px] px-4 md:px-0">
-          <iframe 
-            src='https://my.spline.design/creatorcafeheropage-lUhiy0IjH4D0qa4DZUJtcA13/' 
-            frameBorder='0' 
-            width='100%' 
-            height='100%'
-          />
+      <div className="w-full h-[100vh] relative overflow-visible">
+        <div className="absolute inset-0 top-[80px] md:top-[100px] flex items-center justify-center pointer-events-none">
+          <div className="relative w-[90%] sm:w-[100%] h-full items-center justify-center">
+            <iframe 
+              src='https://my.spline.design/creatorcafeheropage-lUhiy0IjH4D0qa4DZUJtcA13/'
+              frameBorder='0' 
+              width='100%' 
+              height='100%'
+              className="w-full scale-[1.0] sm:scale-120 md:scale-125 transform-gpu pointer-events-auto"
+            />
+          </div>
         </div>
 
         {/* Resume Button and Modal */}
         <div 
-          className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10 animate-resume-appear w-full px-4 md:px-0 md:w-auto"
+          className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10 animate-resume-appear w-full px-4 md:px-0 md:w-auto pointer-events-auto"
           style={{ perspective: '1000px' }}
         >
           <Dialog open={isResumeOpen} onOpenChange={setIsResumeOpen}>
@@ -124,7 +127,7 @@ export default function Page() {
                 <div className="flex items-start gap-5 transform group-hover:translate-x-2 transition-transform duration-700 delay-150">
                   <MapPin className="w-8 h-8 mt-1 text-stone-300" />
                   <div>
-                    <div className="font-light text-2xl text-white tracking-wide">Massachusetts</div>
+                    <div className="font-light text-2xl text-white tracking-wide">New York City</div>
                     <div className="text-stone-300 font-light tracking-wide mt-2">Open to opportunities</div>
                   </div>
                 </div>
@@ -137,14 +140,14 @@ export default function Page() {
             className="md:col-span-6 lg:col-span-6 border-none bg-gradient-to-r from-stone-50/80 to-white/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-1000 hover:scale-[1.002] relative overflow-hidden group"
             id="experience"
           >
-            <CardHeader className="relative z-10 pb-12 px-16 pt-16">
+            <CardHeader className="relative z-10 pb-12 px-6 md:px-16 pt-16">
               <CardTitle className="text-4xl font-light text-stone-800 relative inline-block tracking-tight">
                 Experience
                 <div className="absolute -bottom-3 left-0 w-16 h-px bg-gradient-to-r from-stone-400 to-transparent"></div>
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-8 relative z-10 px-16 pb-16">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <CardContent className="space-y-8 relative z-10 px-6 md:px-16 pb-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {[
                   {
                     company: "BlackRock",
@@ -170,14 +173,15 @@ export default function Page() {
                 ].map((job, index) => (
                   <div
                     key={job.company}
-                    className="p-10 rounded-xl bg-white/50 hover:bg-white/70 transition-all duration-700 transform hover:scale-[1.02] hover:shadow-lg relative group"
+                    className="p-8 md:p-10 rounded-none bg-gradient-to-br from-stone-50/50 to-gray-50/50 hover:from-stone-100/50 hover:to-gray-100/50 transition-all duration-1000 transform hover:scale-102 hover:shadow-2xl border-l-2 border-stone-300 hover:border-stone-400 relative group"
                     style={{ animationDelay: `${index * 200}ms` }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-stone-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-xl"></div>
-                    <h3 className="font-light text-2xl text-stone-800 mb-4 tracking-wide relative z-10">
-                      {job.company}
-                    </h3>
-                    <div className="text-stone-500 font-medium mb-2 text-sm tracking-widest uppercase relative z-10">
+                    <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-stone-400 to-transparent transform scale-y-0 group-hover:scale-y-100 transition-transform duration-1000 ease-out"></div>
+                    <div className="flex items-center gap-6">
+                      <Code className="w-10 h-10 text-stone-600" />
+                      <h3 className="font-light text-2xl text-stone-800 tracking-wide">{job.company}</h3>
+                    </div>
+                    <div className="text-stone-500 font-medium mt-4 mb-2 text-sm tracking-widest uppercase relative z-10">
                       {job.period}
                     </div>
                     <p className="text-stone-600 font-medium mb-4 text-lg tracking-wide relative z-10">{job.role}</p>
@@ -188,8 +192,8 @@ export default function Page() {
             </CardContent>
           </Card>
 
-          {/* Skills Grid */}
-          <Card className="md:col-span-6 lg:col-span-6 border-none bg-gradient-to-br from-stone-900 via-gray-800 to-stone-800 text-white shadow-2xl hover:shadow-3xl transition-all duration-1000 hover:scale-[1.002] relative overflow-hidden group">
+          {/* Skills Grid - Desktop Version */}
+          <Card className="md:col-span-6 lg:col-span-6 border-none bg-gradient-to-br from-stone-900 via-gray-800 to-stone-800 text-white shadow-2xl hover:shadow-3xl transition-all duration-1000 hover:scale-[1.002] relative overflow-hidden group hidden md:block">
             <CardHeader className="relative z-10 pb-12 px-16 pt-16">
               <CardTitle className="text-4xl font-light text-white relative inline-block tracking-tight">
                 Skills & Expertise
@@ -234,9 +238,49 @@ export default function Page() {
             </CardContent>
           </Card>
 
-          {/* Projects Section */}
+          {/* Skills Section - Mobile Version */}
+          <Card className="md:col-span-6 lg:col-span-6 border-none bg-gradient-to-br from-stone-900 via-gray-800 to-stone-800 text-white shadow-2xl transition-all duration-1000 relative overflow-hidden md:hidden">
+            <CardHeader className="relative z-10 pb-8 px-6 pt-10">
+              <CardTitle className="text-3xl font-light text-white relative inline-block tracking-tight">
+                Skills & Expertise
+                <div className="absolute -bottom-3 left-0 w-12 h-px bg-gradient-to-r from-white to-transparent"></div>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="relative z-10 px-6 pb-10">
+              {Object.entries(skillsByCategory).map(([category, skills], categoryIndex) => (
+                <div 
+                  key={category}
+                  className="mb-8 last:mb-0"
+                  style={{ 
+                    animationDelay: `${categoryIndex * 150}ms`,
+                    animation: 'skillCategoryFade 0.8s ease-out backwards'
+                  }}
+                >
+                  <h3 className="text-lg font-light tracking-wide text-stone-200 mb-3 pb-2 border-b border-white/10">
+                    {category}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.map((skill, skillIndex) => (
+                      <Badge
+                        key={skill}
+                        className="bg-white/10 hover:bg-white/20 text-white border-none py-1.5 px-3 text-sm font-light"
+                        style={{ 
+                          animationDelay: `${categoryIndex * 150 + skillIndex * 50}ms`,
+                          animation: 'skillPopup 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards'
+                        }}
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+
+          {/* Projects Section - Desktop Version */}
           <Card
-            className="md:col-span-4 lg:col-span-6 bg-white/90 backdrop-blur-sm border-stone-200/60 shadow-xl hover:shadow-2xl transition-all duration-1000 hover:scale-[1.002] relative overflow-hidden group"
+            className="md:col-span-4 lg:col-span-6 bg-white/90 backdrop-blur-sm border-stone-200/60 shadow-xl hover:shadow-2xl transition-all duration-1000 hover:scale-[1.002] relative overflow-hidden group hidden md:block"
             id="projects"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-stone-50/20 to-gray-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
@@ -293,6 +337,64 @@ export default function Page() {
                   </div>
                 ))}
               </div>
+            </CardContent>
+          </Card>
+
+          {/* Projects Section - Mobile Version */}
+          <Card
+            className="md:hidden col-span-1 bg-white/90 backdrop-blur-sm border-stone-200/60 shadow-xl transition-all duration-1000 relative overflow-hidden"
+            id="projects-mobile"
+          >
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-stone-300 to-transparent"></div>
+            <CardHeader className="relative z-10 pb-8 px-6 pt-10">
+              <CardTitle className="text-3xl font-light text-stone-800 relative inline-block tracking-tight">
+                🚀 Projects I'm Proud Of
+                <div className="absolute -bottom-3 left-0 w-16 h-px bg-gradient-to-r from-stone-400 to-transparent"></div>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="relative z-10 px-6 pb-10">
+              {[
+                {
+                  icon: Smartphone,
+                  title: "Kashmiri Gathering App",
+                  description:
+                    "Led full-stack development for an app used by 1,000+ event participants with networking portal, interactive map, and live updates.",
+                  tags: ["SwiftUI", "JavaScript", "C#"],
+                },
+                {
+                  icon: Code,
+                  title: "Gesture-Controlled System",
+                  description:
+                    "Built real-time action recognition system using TensorFlow, OpenCV, and MediaPipe with 71% accuracy for hand gesture identification.",
+                  tags: ["TensorFlow", "OpenCV", "MediaPipe"],
+                },
+              ].map((project, index) => (
+                <div
+                  key={project.title}
+                  className="mb-8 last:mb-0 p-8 rounded-none bg-gradient-to-br from-stone-50/50 to-gray-50/50 border-l-2 border-stone-300 relative"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <project.icon className="w-8 h-8 text-stone-600" />
+                    <h3 className="font-light text-xl text-stone-800 tracking-wide">{project.title}</h3>
+                  </div>
+                  <p className="text-stone-600 leading-relaxed font-light mb-6">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <Badge
+                        key={tag}
+                        variant="outline"
+                        className="text-sm py-1.5 px-3 rounded-none border-stone-300 text-stone-700 font-light"
+                        style={{ animationDelay: `${tagIndex * 50}ms` }}
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </CardContent>
           </Card>
 
