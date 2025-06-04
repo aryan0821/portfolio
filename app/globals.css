@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0% / 0;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9% / 0;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 221 83% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html, body {
+    @apply bg-transparent text-foreground min-h-screen;
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+  }
+}
+
+/* Spline background styles */
+.spline-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background: transparent;
+}
+
+@layer utilities {
+  .text-navy-50 {
+    color: #f8fafc;
+  }
+  .text-navy-100 {
+    color: #f1f5f9;
+  }
+  .text-navy-200 {
+    color: #e2e8f0;
+  }
+  .text-navy-300 {
+    color: #cbd5e1;
+  }
+  .text-navy-400 {
+    color: #94a3b8;
+  }
+  .text-navy-500 {
+    color: #64748b;
+  }
+  .text-navy-600 {
+    color: #475569;
+  }
+  .text-navy-700 {
+    color: #334155;
+  }
+  .text-navy-800 {
+    color: #1e293b;
+  }
+  .text-navy-900 {
+    color: #0f172a;
+  }
+
+  .bg-navy-50 {
+    background-color: #f8fafc;
+  }
+  .bg-navy-100 {
+    background-color: #f1f5f9;
+  }
+  .bg-navy-200 {
+    background-color: #e2e8f0;
+  }
+  .bg-navy-300 {
+    background-color: #cbd5e1;
+  }
+  .bg-navy-400 {
+    background-color: #94a3b8;
+  }
+  .bg-navy-500 {
+    background-color: #64748b;
+  }
+  .bg-navy-600 {
+    background-color: #475569;
+  }
+  .bg-navy-700 {
+    background-color: #334155;
+  }
+  .bg-navy-800 {
+    background-color: #1e293b;
+  }
+  .bg-navy-900 {
+    background-color: #0f172a;
+  }
+
+  .border-navy-100 {
+    border-color: #f1f5f9;
+  }
+  .border-navy-200 {
+    border-color: #e2e8f0;
+  }
+  .border-navy-300 {
+    border-color: #cbd5e1;
+  }
+  .border-navy-400 {
+    border-color: #94a3b8;
+  }
+  .border-navy-500 {
+    border-color: #64748b;
+  }
+  .border-navy-600 {
+    border-color: #475569;
+  }
+  .border-navy-700 {
+    border-color: #334155;
+  }
+
+  .from-navy-50 {
+    --tw-gradient-from: #f8fafc;
+  }
+  .from-navy-100 {
+    --tw-gradient-from: #f1f5f9;
+  }
+  .from-navy-200 {
+    --tw-gradient-from: #e2e8f0;
+  }
+  .from-navy-300 {
+    --tw-gradient-from: #cbd5e1;
+  }
+  .from-navy-400 {
+    --tw-gradient-from: #94a3b8;
+  }
+  .from-navy-500 {
+    --tw-gradient-from: #64748b;
+  }
+  .from-navy-600 {
+    --tw-gradient-from: #475569;
+  }
+  .from-navy-700 {
+    --tw-gradient-from: #334155;
+  }
+  .from-navy-800 {
+    --tw-gradient-from: #1e293b;
+  }
+  .from-navy-900 {
+    --tw-gradient-from: #0f172a;
+  }
+
+  .to-navy-50 {
+    --tw-gradient-to: #f8fafc;
+  }
+  .to-navy-100 {
+    --tw-gradient-to: #f1f5f9;
+  }
+  .to-navy-200 {
+    --tw-gradient-to: #e2e8f0;
+  }
+  .to-navy-300 {
+    --tw-gradient-to: #cbd5e1;
+  }
+  .to-navy-400 {
+    --tw-gradient-to: #94a3b8;
+  }
+  .to-navy-500 {
+    --tw-gradient-to: #64748b;
+  }
+  .to-navy-600 {
+    --tw-gradient-to: #475569;
+  }
+  .to-navy-700 {
+    --tw-gradient-to: #334155;
+  }
+  .to-navy-800 {
+    --tw-gradient-to: #1e293b;
+  }
+  .to-navy-900 {
+    --tw-gradient-to: #0f172a;
+  }
+
+  .via-navy-50 {
+    --tw-gradient-via: #f8fafc;
+  }
+  .via-navy-100 {
+    --tw-gradient-via: #f1f5f9;
+  }
+  .via-navy-200 {
+    --tw-gradient-via: #e2e8f0;
+  }
+  .via-navy-300 {
+    --tw-gradient-via: #cbd5e1;
+  }
+  .via-navy-400 {
+    --tw-gradient-via: #94a3b8;
+  }
+  .via-navy-500 {
+    --tw-gradient-via: #64748b;
+  }
+  .via-navy-600 {
+    --tw-gradient-via: #475569;
+  }
+  .via-navy-700 {
+    --tw-gradient-via: #334155;
+  }
+  .via-navy-800 {
+    --tw-gradient-via: #1e293b;
+  }
+  .via-navy-900 {
+    --tw-gradient-via: #0f172a;
+  }
+
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+}
