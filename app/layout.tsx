@@ -3,12 +3,12 @@ import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
-  title: 'Zeina Zahoori',
-  description: 'Portfolio website showcasing my work and experience',
+  title: 'Aryan Nair',
+  description: 'Machine Learning Engineer portfolio showcasing AI systems and technical expertise',
   icons: {
-    icon: '/assets/zeina_logo.png',
-    shortcut: '/assets/zeina_logo.png',
-    apple: '/assets/zeina_logo.png',
+    icon: '/assets/aryan_logo.png',
+    shortcut: '/assets/aryan_logo.png',
+    apple: '/assets/aryan_logo.png',
   },
   generator: 'v0.dev',
 }
