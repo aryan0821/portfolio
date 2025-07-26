@@ -373,21 +373,19 @@ If the user asks about something completely unrelated to Aryan, his work, skills
           </div>
         </header>
 
-        {/* Hero Section with Spline and Image */}
+        {/* Hero Section with Background Image */}
         <div className="w-full h-[100vh] relative overflow-visible">
-          {/* Spline iframe container - truly full width on mobile */}
-          <div className="absolute inset-0 top-[80px] md:top-[100px] left-0 right-0 w-screen md:w-full flex items-center justify-center pointer-events-none overflow-hidden p-0">
+          {/* Background image container - truly full width on mobile */}
+          <div className="absolute inset-0 top-[0px] md:top-[20px] left-0 right-0 w-screen md:w-full flex items-center justify-center pointer-events-none overflow-hidden p-0">
             <div className="relative w-screen h-[100vh] md:w-full md:h-full flex items-center justify-center overflow-hidden">
-              <iframe 
-                src='https://my.spline.design/creatorcafeheropage-lUhiy0IjH4D0qa4DZUJtcA13/'
-                frameBorder='0' 
-                width='100%'
-                height='100%'
-                className="w-screen h-[100vh] md:w-full md:h-full max-w-full max-h-full scale-[0.85] sm:scale-95 md:scale-105 transform-gpu pointer-events-auto"
+              <img 
+                src="/assets/hero-bg.png"
+                alt="Hero Background"
+                className="w-screen h-[100vh] md:w-full md:h-full max-w-full max-h-full scale-[0.85] sm:scale-95 md:scale-105 transform-gpu object-cover"
                 style={{ display: 'block', margin: '0', padding: '0' }}
               />
-                    </div>
-                    </div>
+            </div>
+          </div>
 
           {/* Aryan's image fixed to the bottom right of the hero section, no border/background, desktop only */}
           <img 
@@ -718,7 +716,7 @@ If the user asks about something completely unrelated to Aryan, his work, skills
           {/* Bento Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 mt-20">
             {/* About Section - Large */}
-            <Card className="md:col-span-4 lg:col-span-4 border-none shadow-2xl hover:shadow-3xl transition-all duration-1000 hover:scale-[1.005] relative overflow-hidden group backdrop-blur-sm bg-white/5">
+            <Card className="md:col-span-4 lg:col-span-4 border-none shadow-2xl hover:shadow-3xl transition-all duration-1000 hover:scale-[1.005] relative overflow-hidden group backdrop-blur-sm bg-white/5" id="about">
               <CardContent className="p-8 md:p-16 relative z-10">
                 <div className="space-y-8 md:space-y-12">
                   <div className="space-y-6 md:space-y-8">
@@ -726,7 +724,7 @@ If the user asks about something completely unrelated to Aryan, his work, skills
                       About Me
                     </div>
                     <p className="text-2xl md:text-4xl text-stone-700 leading-relaxed font-light tracking-wide max-w-3xl mb-4">
-                      I'm a machine learning engineer with a strong foundation in building scalable data pipelines and forecasting systems. While my professional work dives deep into time series modeling, MLOps, and cloud infrastructure, my passion projects lean user-first.
+                      I'm a <span className="underline decoration-stone-400 decoration-2">machine learning engineer</span> with a strong foundation in building scalable data pipelines and forecasting systems. While my professional work dives deep into time series modeling, MLOps, and cloud infrastructure, my passion projects lean user-first.
                     </p>
                     <p className="text-2xl md:text-4xl text-stone-700 leading-relaxed font-light tracking-wide max-w-3xl">
                       I love crafting mobile and web experiences that are intuitive and impactful, using machine learning not as a buzzword, but as a tool to meaningfully enhance the user experience. I thrive at the intersection of data and design, where technical depth meets thoughtful product thinking.
@@ -1447,6 +1445,8 @@ If the user asks about something completely unrelated to Aryan, his work, skills
           .animate-bouncy-scroll { 
             animation: bouncy-scroll 2s ease-in-out infinite;
           }
+
+
         `}</style>
       </div>
       <Analytics />
